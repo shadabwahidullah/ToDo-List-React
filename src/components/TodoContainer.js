@@ -38,6 +38,10 @@ class TodoContainer extends React.Component {
     }));
   };
 
+  deleteTodo = (id) => {
+      console.log("delete");
+  }
+
   render() {
     return (
       <React.StrictMode>
@@ -46,6 +50,7 @@ class TodoContainer extends React.Component {
           <TodosList
             todos={this.state.todos}
             handleChangeProps={this.handleChange}
+            deleteTodoProps={this.deleteTodo}
           />
         </div>
       </React.StrictMode>
