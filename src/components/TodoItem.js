@@ -52,7 +52,7 @@ class TodoItem extends React.Component {
             {title}
           </span>
         </div>
-        <input type="text" className={styles.textInput}  style={editMode}></input>
+        <input type="text" className={styles.textInput}  style={editMode} value={title}></input>
       </li>
     );
   }
