@@ -51,11 +51,11 @@ const TodoContainer = () => {
   };
 
   const deleteTodo = (id) => {
-    setTodos([
+    setTodos(
       todos.filter((todo) => {
         return todo.id !== id;
-      }),
-    ]);
+      })
+    );
   };
 
   const addTodoItem = (title) => {
