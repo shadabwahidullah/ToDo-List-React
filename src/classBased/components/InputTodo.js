@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
 class InputTodo extends React.Component {
   state = {
-    title: "",
+    title: '',
   };
 
   onChange = (e) => {
@@ -16,12 +16,13 @@ class InputTodo extends React.Component {
     if (this.state.title.trim()) {
       this.props.addTodoItem(this.state.title);
       this.setState({
-        title: "",
+        title: '',
       });
     } else {
-      alert("Please write item");
+      alert('Please write item');
     }
   };
+
   render() {
     return (
       <form onSubmit={this.handleSubmit} className="form-container">

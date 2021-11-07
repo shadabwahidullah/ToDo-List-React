@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-//stylesheet
-import styles from "./TodoItem.module.css";
+// stylesheet
+import styles from './TodoItem.module.css';
 
 class TodoItem extends React.Component {
   state = {
@@ -15,7 +15,7 @@ class TodoItem extends React.Component {
   };
 
   handleUpdateDone = (event) => {
-    if(event.key === "Enter"){
+    if (event.key === 'Enter') {
       this.setState({
         editing: false,
       });
@@ -24,21 +24,21 @@ class TodoItem extends React.Component {
 
   render() {
     const completedStyle = {
-      fontStyle: "italic",
-      color: "#595959",
+      fontStyle: 'italic',
+      color: '#595959',
       opacity: 0.4,
-      textDecoration: "line-through",
+      textDecoration: 'line-through',
     };
 
     const { completed, id, title } = this.props.todo;
 
-    let viewMode = {};
-    let editMode = {};
+    const viewMode = {};
+    const editMode = {};
 
     if (this.state.editing) {
-      viewMode.display = "none";
+      viewMode.display = 'none';
     } else {
-      editMode.display = "none";
+      editMode.display = 'none';
     }
 
     return (
@@ -69,7 +69,7 @@ class TodoItem extends React.Component {
             this.props.setUpdate(e.target.value, id);
           }}
           onKeyDown={this.handleUpdateDone}
-        ></input>
+        />
       </li>
     );
   }
