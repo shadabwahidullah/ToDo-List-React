@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 import TodosList from "./TodosList";
@@ -7,6 +7,10 @@ import InputTodo from "./InputTodo";
 
 const TodoContainer = () => {
   const [todos, setTodos] = useState([]);
+
+  useEffect(() => {
+    console.log("use effect called");
+  });
 
   const handleChange = (id) => {
     setTodos((prevState) =>
