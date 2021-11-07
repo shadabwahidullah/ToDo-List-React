@@ -6,8 +6,6 @@ import Header from './Header';
 import InputTodo from './InputTodo';
 
 const TodoContainer = () => {
-  const [todos, setTodos] = useState(getInitialTodos());
-
   // we were calling the setTodos setter function in the effect.
   // This is similar to calling the setState() in the componentDidMount
   //  method. As we’ve mentioned earlier in the series, this triggers an extra rendering.
@@ -18,6 +16,8 @@ const TodoContainer = () => {
     const savedTodos = JSON.parse(temp);
     return savedTodos || [];
   }
+
+  const [todos, setTodos] = useState(getInitialTodos());
 
   useEffect(() => {
     console.log('use effect called');
@@ -49,9 +49,7 @@ const TodoContainer = () => {
   };
 
   const deleteTodo = (id) => {
-    setTodos(
-      todos.filter((todo) => todo.id !== id),
-    );
+    setTodos(todos.filter((todo) => todo.id !== id));
   };
 
   const addTodoItem = (title) => {
@@ -67,8 +65,8 @@ const TodoContainer = () => {
   const setUpdate = (updatedTitle, id) => {
     setTodos(
       todos.map((todo) => {
-        if (todo.id == id) {
-          todo.title = updatedTitle;
+        if (todo.id === id) {
+          todo.title = updatedTitle; // eslint-disable-line no-param-reassign
         }
         return todo;
       }),

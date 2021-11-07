@@ -6,7 +6,7 @@ const InputTodo = (props) => {
   const [inputText, setInputText] = useState({
     title: '',
   });
-
+  const { addTodoItem } = props;
   const onChange = (e) => {
     setInputText({
       ...inputText,
@@ -17,7 +17,7 @@ const InputTodo = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (inputText.title.trim()) {
-      props.addTodoItem(inputText.title);
+      addTodoItem(inputText.title);
       setInputText({
         title: '',
       });
@@ -36,9 +36,11 @@ const InputTodo = (props) => {
         name="title"
         onChange={onChange}
       />
-      <button className="input-submit"><FaPlusCircle /></button>
+      <button id="submit" type="submit" className="input-submit">
+        <FaPlusCircle />
+      </button>
     </form>
-  );
+  ); // eslint-disable-line jsx-a11y/label-has-associated-control
 };
 
 export default InputTodo;
