@@ -7,23 +7,7 @@ import InputTodo from "./InputTodo";
 
 class TodoContainer extends React.Component {
   state = {
-    todos: [
-      {
-        id: uuidv4(),
-        title: "setup development environment",
-        completed: true,
-      },
-      {
-        id: uuidv4(),
-        title: "Develope website and add content",
-        completed: true,
-      },
-      {
-        id: uuidv4(),
-        title: "Deploy to live server",
-        completed: false,
-      },
-    ],
+    todos: [],
   };
 
   handleChange = (id) => {
