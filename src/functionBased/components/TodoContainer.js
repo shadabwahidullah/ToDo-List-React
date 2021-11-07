@@ -6,7 +6,18 @@ import Header from "./Header";
 import InputTodo from "./InputTodo";
 
 const TodoContainer = () => {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(getInitialTodos());
+
+  // we were calling the setTodos setter function in the effect.
+  // This is similar to calling the setState() in the componentDidMount
+  //  method. As we’ve mentioned earlier in the series, this triggers an extra rendering.
+
+  function getInitialTodos() {
+    // getting stored items
+    const temp = localStorage.getItem("todos");
+    const savedTodos = JSON.parse(temp);
+    return savedTodos || [];
+  }
 
   useEffect(() => {
     console.log("use effect called");
