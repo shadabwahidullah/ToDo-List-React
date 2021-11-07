@@ -17,7 +17,13 @@ const TodoContainer = () => {
     if (loadedTodos) {
       setTodos(loadedTodos);
     }
-  },[]);
+  }, []);
+
+  useEffect(() => {
+    // storing todos items
+    const temp = JSON.stringify(todos);
+    localStorage.setItem("todos", temp);
+  }, [todos]);
 
   const handleChange = (id) => {
     setTodos((prevState) =>
