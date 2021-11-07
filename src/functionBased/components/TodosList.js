@@ -3,7 +3,7 @@ import React from 'react';
 import TodoItem from './TodoItem';
 
 const TodosList = (props) => {
-  const [todos, handleChangeProps, deleteTodoProps, setUpdate] = props;
+  const { todos } = props;
   return (
     <ul>
       {todos.map((todo) => {
@@ -12,9 +12,9 @@ const TodosList = (props) => {
           <TodoItem
             key={id}
             todo={todo}
-            handleChangeProps={handleChangeProps}
-            deleteTodoProps={deleteTodoProps}
-            setUpdate={setUpdate}
+            handleChangeProps={props.handleChangeProps}
+            deleteTodoProps={props.deleteTodoProps}
+            setUpdate={props.setUpdate}
           />
         );
       })}

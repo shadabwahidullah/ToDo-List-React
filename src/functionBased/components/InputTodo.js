@@ -6,7 +6,7 @@ const InputTodo = (props) => {
   const [inputText, setInputText] = useState({
     title: '',
   });
-  const { addTodoItem } = props;
+
   const onChange = (e) => {
     setInputText({
       ...inputText,
@@ -17,7 +17,7 @@ const InputTodo = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (inputText.title.trim()) {
-      addTodoItem(inputText.title);
+      props.addTodoItem(inputText.title);
       setInputText({
         title: '',
       });
