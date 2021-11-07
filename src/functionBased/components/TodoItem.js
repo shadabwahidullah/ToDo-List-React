@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 //stylesheet
 import styles from "./TodoItem.module.css";
 
 const TodoItem = (props) => {
   const [editing, setEditing] = useState(false);
+
+  useEffect(() => {
+    console.log("Cleaning up...");
+  }, []);
 
   const handleEditing = () => {
     setEditing(true);
