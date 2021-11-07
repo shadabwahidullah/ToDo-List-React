@@ -10,7 +10,14 @@ const TodoContainer = () => {
 
   useEffect(() => {
     console.log("use effect called");
-  });
+    // getting stored items
+    const temp = localStorage.getItem("todos");
+    const loadedTodos = JSON.parse(temp);
+
+    if (loadedTodos) {
+      setTodos(loadedTodos);
+    }
+  },[setTodos]);
 
   const handleChange = (id) => {
     setTodos((prevState) =>
