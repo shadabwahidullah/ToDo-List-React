@@ -17,7 +17,7 @@ const TodoContainer = () => {
     if (loadedTodos) {
       setTodos(loadedTodos);
     }
-  },[setTodos]);
+  },[]);
 
   const handleChange = (id) => {
     setTodos((prevState) =>
