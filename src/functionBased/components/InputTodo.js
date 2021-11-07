@@ -3,9 +3,12 @@ import React, { useState } from "react";
 const InputTodo = props => {
   const [title, setTitle] = useState("");
 
-  const onChange = (e) => {
-    setTitle(e.target.value);
-  };
+  const onChange = e => {
+    setInputText({
+      ...inputText,
+      [e.target.name]: e.target.value,
+    })
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
