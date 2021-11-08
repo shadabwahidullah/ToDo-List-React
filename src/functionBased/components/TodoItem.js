@@ -9,7 +9,6 @@ const TodoItem = (props) => {
   const [editing, setEditing] = useState(false);
 
   useEffect(() => {
-    console.log('Cleaning up...');
   }, []);
 
   const handleEditing = () => {
