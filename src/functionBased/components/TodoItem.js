@@ -29,8 +29,7 @@ const TodoItem = (props) => {
     textDecoration: 'line-through',
   };
 
-  const [todo, handleChangeProps, deleteTodoProps, setUpdate] = props;
-
+  const { todo } = props;
   const { completed, id, title } = todo;
 
   const viewMode = {};
@@ -49,14 +48,13 @@ const TodoItem = (props) => {
           type="checkbox"
           className={styles.checkbox}
           checked={completed}
-          onChange={() => handleChangeProps(id)}
+          onChange={() => props.handleChangeProps(id)}
         />
         <button
           type="submit"
           className={styles.button}
           onClick={() => {
-            console.log(id);
-            deleteTodoProps(id);
+            props.deleteTodoProps(id);
           }}
         >
           <FaTrash />
@@ -71,7 +69,7 @@ const TodoItem = (props) => {
         style={editMode}
         value={title}
         onChange={(e) => {
-          setUpdate(e.target.value, id);
+          props.setUpdate(e.target.value, id);
         }}
         onKeyDown={handleUpdateDone}
       />
